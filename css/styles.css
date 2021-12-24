@@ -926,6 +926,14 @@ display: inline-block;
 	margin-left: 10px;
 }
 
+/* hover и focus на кнопке ПОДПИСАТЬСЯ  */
+
+.form-subscribe .button:hover,
+.form-subscribe .button:focus {
+  transform: scale(0.93);
+}
+
+
 /* Модальное окно  */
 
 .backdrop {
