@@ -191,9 +191,9 @@ img {
 
 .contacts .link:hover,
 .contacts .link:focus,
-.contacts .icon:hover,
+.contacts .icon:hover, 
 .contacts .icon:focus {
-  --color3: var(--accent-color);
+  --color5: var(--accent-color);
   color: var(--accent-color);
 }
 
@@ -247,7 +247,9 @@ background-position: center;
 
 /* кнопка c надписью Заказать услугу */
 
-.button-hero {
+.button-hero,
+
+.form-subscribe .button {
   display: inline-block;
   padding: 10px 32px;
   min-width: 200px;
@@ -485,7 +487,7 @@ background-position: center;
 
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
-  --color4: var(--basic-background-color);
+  --color6: var(--basic-background-color);
 }
 
 .social-icon,
@@ -554,7 +556,7 @@ background-position: center;
 .clients-item .clients-link:hover,
 .clients-item .clients-link:focus {
   color: var(--accent-color);
-  --color4: var(--accent-color);
+  --color6: var(--accent-color);
   border-color: var(--accent-color);
 }
 
@@ -568,7 +570,7 @@ background-position: center;
 }
 .clients-item:hover,
 .clients-item:focus {
-  --color4: var(--accent-color);
+  --color6: var(--accent-color);
   border-color: var(--accent-color);
 }
 
@@ -859,7 +861,7 @@ transition: fill 250ms var(--timing-function);
 .network-icon {
   width: 20px;
   height: 20px;
-  --color4: var(--logo-footer-color);
+  --color6: var(--logo-footer-color);
 } 
 
 .network-title {
@@ -874,6 +876,61 @@ transition: fill 250ms var(--timing-function);
   color:var(--basic-background-color);
 }
 
+/* Подписка на рассылку  */
+
+.subscribe {
+display: inline-block;
+	margin-left: auto;
+  padding: 12px;
+}
+
+.form-subscribe {
+	display: flex;
+}
+
+.form-field {
+	margin-right: 12px;
+}
+
+.form-field > .input {
+  font-weight: 400;
+	font-size: 16px;
+	line-height: 1.25;
+	letter-spacing: inherit;
+	width: 358px;
+	height: 50px;
+	padding: 15px 0 15px 16px;
+	color: var(--secondary-addressdown-color);
+	border-radius: 4px;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.sign-form > .input::placeholder {
+  
+	color: var(--secondary-addressdown-color);
+}
+
+.form-subscribe .button {
+	display: flex;
+	align-items: center;
+
+	width: 200px;
+	height: 50px;
+	padding: 10px 28px;
+}
+
+.icon-subscribe {
+	fill: var(--basic-background-color);
+	margin-left: 10px;
+}
+
+
+/* Добавление еффекта ховера на ел.почты в форме на подписку в футере */
+.form-subscribe >.input:hover {
+  border-color: var(--accent-color);
+}
 /* Модальное окно  */
 
 .backdrop {
@@ -900,20 +957,19 @@ transition: fill 250ms var(--timing-function);
   transform: translate(-50%, -50%) scale(1);
   min-width: 528px;
   min-height: 580px;
+  padding: 40px;
 
   background-color: var(--basic-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
   0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-
   transition: transform 250ms var(--timing-function); 
 }
-
+/* Кнопка "ЗАКРЫТЬ" В модальном окне */
 .close {
   position: absolute;
+  top: 0;
+  right: 0;
   margin-top: 8px;
   margin-right: 8px;
   min-width: 30px;
@@ -924,9 +980,215 @@ transition: fill 250ms var(--timing-function);
   background-image: url(../images/close.svg);
   cursor: pointer;
   padding: 0;
+  transition: color 250ms var(--timing-function); 
+}
+
+/* Добавление еффекта ховера и фокуса на кнопку ЗАКРЫТЬ ("крестик") в мод окне */
+.modal .close:hover,
+.modal .close:focus {
+  color: var(--accent-color);
+}
+
+/* Оформление ЗАГОЛОВКА в модальном окне */
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
 }
 
 
+
+/* Оформление кнопки ОТПРАВИТЬ в модалке */
+
+.modal-form > .btn-submit {
+  display: block;
+  margin: 30px auto 0;
+  padding: 0;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  background-color: var(--button-hero-color);
+  color: var(--basic-background-color);
+
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
+}
+
+/* Добавление еффекта ховера и фокуса на кнопку Отправить в модалке */
+.modal-form > .btn-submit:hover,
+.modal-form > .btn-submit:focus {
+  background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Оформление меток над полями ввода в модалке */
+.modal-form > .label {
+  display: block; /**/
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: var(--secondary-txt-color);
+}
+
+/* Оформление полей ввода в модалке */
+.modal-form input[name='name'],
+.modal-form input[name='telephone'],
+.modal-form input[name='email'],
+.modal-form textarea[name='comments'] {
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+
+  color: var(--secondary-txt-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: color var(--delay) var(--time-function),
+    border-color var(--delay) var(--time-function);
+}
+
+.modal-form input[name='name'],
+.modal-form input[name='telephone'],
+.modal-form input[name='email'] {
+  padding: 12px 16px 12px 42px;
+  height: 40px;
+}
+
+.modal-form textarea[name='comments'] {
+  display: block;
+  padding: 12px 16px;
+  height: 120px;
+  resize: none;
+}
+
+.modal-form textarea[name='comments']::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* Позиционирование иконок в полях ввода */
+.modal-form .group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.modal-form input[name='name'] + .icon,
+.modal-form input[name='telephone'] + .icon,
+.modal-form input[name='email'] + .icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill var(--delay) var(--time-function);
+}
+
+/* чекбокс-прямоугольник согласия на рассылку и его анимация */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal-form .group-checkbox {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  text-align: center;
+}
+
+.group-checkbox .agreement-link {
+  color: var(--accent-color);
+  text-decoration-line: underline;
+}
+
+.modal-form .group:hover input,
+.modal-form .group:focus-within input {
+  border-color: var(--accent-color);
+}
+
+.modal-form .group:hover .icon,
+.modal-form .group:focus-within .icon {
+  fill: var(--accent-color);
+}
+
+.modal-form .group:hover textarea,
+.modal-form .group:focus-within textarea {
+  border-color: var(--accent-color);
+}
+ 
+.group-checkbox .check-icon {
+  margin-right: 8px;
+  fill: var(--accent-color);
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
+  transition: border-color  250ms var var(--time-function);
+  cursor: pointer;
+}
+
+.check-icon use {
+  display: none;
+}
+
+.checkbox-agreement:checked + .check-icon {
+  border: none;
+}
+
+.checkbox-agreement:checked + .check-icon use {
+  display: block;
+}
+
+.group-checkbox > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* cursor: pointer; */
+}
+
+.checkbox-agreement:focus + .check-icon {
+  border-color: var(--accent-color);
+  outline: 0.5px dotted;
+}
+
+.group-checkbox .check-icon:hover {
+  border-color: var(--accent-color);
+}
 
 
 
