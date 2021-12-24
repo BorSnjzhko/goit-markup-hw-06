@@ -1,2 +1,3 @@
 домашнее задание # 6
-# goit-markup-hw-0
+pages https://borsnjzhko.github.io/goit-markup-hw-06/  
+
